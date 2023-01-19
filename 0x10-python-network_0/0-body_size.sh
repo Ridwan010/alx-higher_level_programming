@@ -1,3 +1,5 @@
 #!/bin/bash
-# Displays the size of the body response
-curl -s "$1" | wc -c
+
+# Script that shows the Content-Length from a HTTP request
+
+curl -sI "$1" | grep "Content-Length:" | cut -d " " -f 2
